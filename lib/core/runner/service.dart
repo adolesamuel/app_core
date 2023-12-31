@@ -81,7 +81,7 @@ class ServiceRunner<Failure, T> {
           //toast is showed for the error message.
           //
           //This delete the saved user so app logs out.
-          AuthManager().clearAuthenticatedUser();
+          AuthManager.instance().clearAuthenticatedUser();
         }
         return Left(
             CommonFailure(errorTitle, e.toString().replaceAll('Exception:', ''))

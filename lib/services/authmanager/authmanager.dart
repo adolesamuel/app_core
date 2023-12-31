@@ -1,11 +1,9 @@
 import 'package:app_core/services/authmanager/sources/local_source.dart';
 
 class AuthManager<T> {
-  static AuthManager<Y> _instance<Y>() => AuthManager._();
+  static AuthManager<Y> instance<Y>() => AuthManager._();
 
   AuthManager._();
-
-  factory AuthManager() => _instance<T>();
 
   AuthLocalDataSource<T>? _localSource;
 
