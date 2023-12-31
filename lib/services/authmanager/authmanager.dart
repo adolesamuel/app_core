@@ -6,12 +6,11 @@ class AuthManager<T> {
 
   T? user;
 
-  AuthManager._() {
-    init();
-  }
+  AuthManager._();
 
   Future<void> initializeLocalAuth(AuthLocalDataSource<T> localAuth) async {
     _localSource = localAuth;
+    init();
   }
 
   Future<void> init() async {
