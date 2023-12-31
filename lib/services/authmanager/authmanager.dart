@@ -1,7 +1,7 @@
 import 'package:app_core/services/authmanager/sources/local_source.dart';
 
 class AuthManager<T> {
-  static AuthManager<Y> instance<Y>() => AuthManager._();
+  static final AuthManager instance = AuthManager._();
 
   AuthManager._();
 
