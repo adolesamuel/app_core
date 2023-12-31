@@ -10,8 +10,8 @@ class AuthManager<T> {
     init();
   }
 
-  static void initializeLocalAuth<T>(AuthLocalDataSource<T> localAuth) {
-    AuthManager.instance.localSource = localAuth;
+  void initializeLocalAuth(AuthLocalDataSource<T> localAuth) {
+    localSource = localAuth;
   }
 
   Future<void> init() async {
