@@ -1,7 +1,7 @@
 name: app_core
 description: "This package provide's an apps core functionality"
 version: 0.0.1
-homepage:
+homepage: https://github.com/adolesamuel/app_core
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
@@ -10,6 +10,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  connectivity_plus: ^2.3.6+1
+  flutter_riverpod: ^2.2.0
+  fpdart: ^0.4.0
+  http: ^1.1.0
+  retry: ^3.1.0
+
+
+
+
 
 dev_dependencies:
   flutter_test:
