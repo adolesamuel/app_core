@@ -1,7 +1,7 @@
 import 'package:app_core/services/authmanager/sources/local_source.dart';
 
 class AuthManager<T> {
-  static AuthManager instance = AuthManager._();
+  static AuthManager instance<T>() => AuthManager._();
   late final AuthLocalDataSource<T> _localSource;
 
   T? user;
@@ -32,5 +32,3 @@ class AuthManager<T> {
         .asBroadcastStream();
   }
 }
-
-// class AuthData {}

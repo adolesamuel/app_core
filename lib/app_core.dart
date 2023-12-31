@@ -6,7 +6,7 @@ import 'package:app_core/services/authmanager/sources/local_source.dart';
 class AppCore {
   static Future<void> initializeAppCore<Y>(
       AuthLocalDataSource<Y> localDataSource) async {
-    await AuthManager.instance.initializeLocalAuth(localDataSource);
+    await AuthManager.instance<Y>().initializeLocalAuth(localDataSource);
   }
 }
 
