@@ -2,7 +2,7 @@ import 'package:app_core/services/authmanager/sources/local_source.dart';
 
 class AuthManager<T> {
   static AuthManager instance = AuthManager._();
-  late final AuthLocalDataSource<T> localSource;
+  late final AuthLocalDataSource<T> _localSource;
 
   T? user;
 
@@ -10,24 +10,24 @@ class AuthManager<T> {
     init();
   }
 
-  void initializeLocalAuth(AuthLocalDataSource<T> localAuth) {
-    localSource = localAuth;
+  Future<void> initializeLocalAuth(AuthLocalDataSource<T> localAuth) async {
+    _localSource = localAuth;
   }
 
   Future<void> init() async {
-    user = await localSource.getAuthenticatedUser();
+    user = await _localSource.getAuthenticatedUser();
   }
 
   Future<T?> getAuthenticatedUser() async {
-    return user = await localSource.getAuthenticatedUser();
+    return user = await _localSource.getAuthenticatedUser();
   }
 
   Future<void> clearAuthenticatedUser() async {
-    await localSource.clearAuthenticatedUser();
+    await _localSource.clearAuthenticatedUser();
   }
 
   Stream<T?> streamActiveUser() async* {
-    yield* localSource
+    yield* _localSource
         .streamUserStatus()
         .map((event) => user = event)
         .asBroadcastStream();
